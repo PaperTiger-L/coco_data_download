@@ -24,7 +24,16 @@ def main():
             target_category_ids.add(category['id'])
 
     print(f'target category ids:{sorted(target_category_ids)}')
-            
+
+    annotations = data['annotations']
+    target_image_ids = set()
+
+    for annotation in annotations:
+        if annotation['category_id'] in target_category_ids:
+            target_category_ids.add(annotation['image_id'])      
+    
+    print(f'target images count: {len(target_category_ids)}')
+    
 
 if __name__ == '__main__':
     main()
