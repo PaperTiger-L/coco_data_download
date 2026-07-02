@@ -19,7 +19,7 @@ def convert_annotation_file(input_path, output_path):
 
     new_categories = [
         {"id": 1, "name": "person", "supercategory": "person"},
-        {"id": 2, "name": "pet", "supercategory": "animal"},
+        {"id": 2, "name": "animal", "supercategory": "animal"},
     ]
 
     new_annotations = []
@@ -67,12 +67,12 @@ def main():
 
     convert_annotation_file(
         input_dir / "instances_train2017.json",
-        input_dir / "instances_train2017_person_pet.json",
+        input_dir / "instances_train2017_person_animal.json",
     )
 
     convert_annotation_file(
         input_dir / "instances_val2017.json",
-        input_dir / "instances_val2017_person_pet.json",
+        input_dir / "instances_val2017_person_animal.json",
     )
 
 
