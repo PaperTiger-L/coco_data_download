@@ -17,5 +17,14 @@ def main():
     categories = data['categories']
     print(f'categories count: {len(categories)}')
 
+    target_category_ids = set()
+
+    for category in categories:
+        if category['name'] in TARGET_CATEGORIES:
+            target_category_ids.add(category['id'])
+
+    print(f'target category ids:{sorted(target_category_ids)}')
+            
+
 if __name__ == '__main__':
     main()
